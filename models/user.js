@@ -1,4 +1,5 @@
 const Sequelize = require("sequelize");
+const { DataTypes } = require('sequelize');
 
 const { sequelize } = require('../db.js');
 
@@ -25,7 +26,7 @@ const User = sequelize.define("user", {
     type: Sequelize.STRING,
   },
   dob: {
-    type: Sequelize.STRING,
+    type: DataTypes.DATE,
     allowNull: false
   },
 }, { tableName: 'user' });
