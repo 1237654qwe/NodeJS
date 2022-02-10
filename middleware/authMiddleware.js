@@ -1,7 +1,5 @@
 const jwt = require('jsonwebtoken');
 
-const { secret } = require('../key');
-
 module.exports = function (req, res, next) {
   if (req.method === "OPTIONS") {
     next()
@@ -11,17 +9,17 @@ module.exports = function (req, res, next) {
     const token = req.headers.authorization.split(' ')[1];
     if (!token) {
       return res.status(401).json({
-        message: 'Пользователь не авторизован'
+        message: 'User is not authorized'
       });
     };
 
-    const decodedData = jwt.verify(token, secret);
+    const decodedData = jwt.verify(token, process.env.SECRET_KEY);
     req.user = decodedData
     next();
 
   } catch (e) {
     return res.status(401).json({
-      message: 'Пользователь не авторизован'
+      message: 'User is not authorized'
     });
   };
 };

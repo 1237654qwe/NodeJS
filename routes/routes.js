@@ -9,7 +9,7 @@ const {
   createUserSchema,
   updateUserSchema,
 } = require('../validation/index');
-const authMiddleware = require('../middleware/index');
+const authMiddleware = require('../middleware/authMiddleware');
 
 const router = express.Router();
 

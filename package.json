@@ -13,6 +13,8 @@
     "body-parser": "^1.19.1",
     "cli": "^1.0.1",
     "crypto-js": "^4.1.1",
+    "dotenv": "^16.0.0",
+    "env": "^0.0.2",
     "express": "^4.17.2",
     "express-joi-validation": "^5.0.1",
     "joi": "^17.6.0",
